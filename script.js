@@ -225,32 +225,6 @@ const docReady = () => {
     setQuote(quoteIndex);
   }
 
-  // Floating badges
-  const badgeLayer = $('#floating-badges');
-  if (badgeLayer) {
-    const badgeWords = [
-      'soft strength',
-      'limitless z',
-      'midnight glow',
-      'creative pulse',
-      'brave heart',
-      'steady calm'
-    ];
-    const spawnBadge = () => {
-      const badge = document.createElement('span');
-      badge.textContent = randomFrom(badgeWords);
-      const startX = `${Math.random() * 120 - 10}vw`;
-      const endX = `${Math.random() * 120 - 10}vw`;
-      badge.style.setProperty('--start-x', startX);
-      badge.style.setProperty('--end-x', endX);
-      badge.style.animationDuration = `${12 + Math.random() * 6}s`;
-      badgeLayer.appendChild(badge);
-      setTimeout(() => badge.remove(), (parseFloat(badge.style.animationDuration) || 14) * 1000);
-    };
-    Array.from({ length: 6 }).forEach(() => spawnBadge());
-    setInterval(spawnBadge, 2400);
-  }
-
   // Cheer beacon
   const cheerLines = [
     'Reminder: Zunaira handles big dreams with soft confidence.',
