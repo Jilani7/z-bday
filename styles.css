@@ -73,6 +73,7 @@ canvas#confetti {
   gap: 2rem;
   align-items: center;
   position: relative;
+  max-width: 1200px;
 }
 
 .hero::before {
@@ -259,8 +260,10 @@ button.ghost:hover {
 }
 
 .orbital-hearts span {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--accent);
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
 }
 
 @keyframes spin {
@@ -956,44 +959,23 @@ footer {
   }
 }
 
-.floating-badges {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.floating-badges span {
-  position: absolute;
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.35);
-  animation: badgeFloat 14s linear infinite;
-  white-space: nowrap;
-}
-
-@keyframes badgeFloat {
-  0% {
-    transform: translate3d(var(--start-x, 0), 120vh, 0) rotate(0deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.5;
-  }
-  60% {
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate3d(var(--end-x, 0), -20vh, 0) rotate(20deg);
-    opacity: 0;
-  }
-}
-
 @media (max-width: 900px) {
+  main {
+    padding: 0 1.5rem 4rem;
+  }
+
+  .section {
+    margin-top: 4rem;
+  }
+
   .hero {
     padding: 3rem 1.5rem;
     grid-template-columns: 1fr;
+  }
+
+  .hero-inner,
+  .hero-side {
+    padding: 2rem;
   }
 
   .hero-actions {
@@ -1004,6 +986,15 @@ footer {
     width: 100%;
   }
 
+  .drift-card,
+  .story-card,
+  .timeline-shell,
+  .cheer-shell,
+  .sequence-panel,
+  .future-shell {
+    padding: 1.6rem;
+  }
+
   .game-board {
     min-height: 260px;
   }
@@ -1011,6 +1002,31 @@ footer {
   .sequence-panel {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-grid,
+  .photo-grid,
+  .drift-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .timeline-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ticker span {
+    letter-spacing: 0.2em;
+  }
+
+  .scoreboard strong {
+    font-size: 2.4rem;
+  }
+
+  .game-board {
+    min-height: 240px;
   }
 }
 
@@ -1075,5 +1091,18 @@ footer {
 
   .cheer-shell {
     grid-template-columns: 1fr;
+  }
+
+  .hero-badges {
+    grid-template-columns: 1fr;
+  }
+
+  .ticker span {
+    letter-spacing: 0.15em;
+    font-size: 0.7rem;
+  }
+
+  .letter {
+    padding: 1.5rem;
   }
 }
