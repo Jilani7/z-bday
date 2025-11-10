@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zunaira's Midnight Canvas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="cursor-sparkles" aria-hidden="true"></div>
+  <div class="floating-badges" aria-hidden="true" id="floating-badges"></div>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow">Midnight wish transmission</p>
+      <h1><span>Celebrating</span> <strong>Zunaira</strong></h1>
+      <p class="lead" id="typewriter" aria-live="polite"></p>
+      <div class="hero-actions">
+        <button class="primary" data-scroll="#journey">Take the aurora tour</button>
+        <button class="secondary" data-scroll="#wishes">Open wishes reel</button>
+        <button class="ghost" id="audio-toggle" aria-pressed="false">Play aurora sound</button>
+      </div>
+      <div class="hero-badges">
+        <div>
+          <p>Crafted by</p>
+          <strong>Jillani</strong>
+          <small>well-wisher mode</small>
+        </div>
+        <div>
+          <p>Studio mood</p>
+          <strong>Midnight Lab</strong>
+          <small>tea-fueled pixels</small>
+        </div>
+      </div>
+      <div class="orbital-hearts" aria-hidden="true">
+        <span>J</span>
+        <span>&middot;</span>
+        <span>Z</span>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="hero-orb">
+        <p>Birthday drop</p>
+        <strong>12:00:00</strong>
+        <small>link will be shared</small>
+      </div>
+      <ul class="hero-stats">
+        <li>
+          <p>Positive signals</p>
+          <strong id="heartbeat">108</strong>
+          <small>bpm of good energy</small>
+        </li>
+        <li>
+          <p>Inspiration tiles</p>
+          <strong>&infin;</strong>
+          <small>and still counting</small>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section id="journey" class="section story">
+      <div class="section-heading">
+        <p>Chapter I</p>
+        <h2>Trail of Sparks</h2>
+        <span class="divider"></span>
+        <p class="subtitle">Moments imagined for you, celebrating kindness, courage, and that signature Zunaira glow.</p>
+      </div>
+      <div class="story-grid">
+        <article class="story-card" data-spark="Calm">
+          <h3>City Quiet</h3>
+          <p>Even in crowded days, calm people are noticed. You remind everyone to breathe between to-dos.</p>
+          <span>streetlights &middot; steady rhythm</span>
+        </article>
+        <article class="story-card" data-spark="Voice">
+          <h3>Encouraging Words</h3>
+          <p>You lift rooms without a mic. Soft sentences can still sound like leadership.</p>
+          <span>gentle tone &middot; strong echo</span>
+        </article>
+        <article class="story-card" data-spark="Ideas">
+          <h3>Idea Garden</h3>
+          <p>Every note, artboard, or quick thought you share feels like a new blueprint for hopeful communities.</p>
+          <span>sketchbook &middot; bright future</span>
+        </article>
+        <article class="story-card" data-spark="Kind">
+          <h3>Ripple Effect</h3>
+          <p>Kindness travels fast. Even people you haven't met yet hear about the way you show up.</p>
+          <span>dua &middot; delivered</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="culture" class="section culture">
+      <div class="section-heading">
+        <p>Chapter II</p>
+        <h2>Culture Collage</h2>
+        <span class="divider"></span>
+        <p class="subtitle">Tap a chip to reveal a micro-tribute stitched with desi textures.</p>
+      </div>
+      <div class="culture-shell">
+        <div class="culture-chips" role="tablist" aria-label="Culture moments">
+          <button class="chip" data-chip="0" aria-selected="true">Chai Pause</button>
+          <button class="chip" data-chip="1">Poetry Air</button>
+          <button class="chip" data-chip="2">Bazaar Glow</button>
+          <button class="chip" data-chip="3">Sky Lantern</button>
+        </div>
+        <div class="culture-detail">
+          <h3 id="culture-title"></h3>
+          <p id="culture-body"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery">
+      <div class="section-heading">
+        <p>Chapter III</p>
+        <h2>Photo Orbit</h2>
+        <span class="divider"></span>
+        <p class="subtitle">Drop your favorite photos inside the styles below by replacing the <code>--photo</code> URLs. Each tile tilts as you hover.</p>
+      </div>
+      <div class="photo-grid">
+        <article class="photo-card" style="--photo: url('images/zun1.jpeg');">
+          <div class="overlay">
+            <p>Photo slot 01</p>
+            <small>Replace URL with any portrait or candid moment.</small>
+          </div>
+        </article>
+        <article class="photo-card" style="--photo: url('images/zun2.jpeg');">
+          <div class="overlay">
+            <p>Photo slot 02</p>
+            <small>Use landscape orientation for a wide feel.</small>
+          </div>
+        </article>
+        <article class="photo-card" style="--photo: url('images/zun3.jpeg');">
+          <div class="overlay">
+            <p>Photo slot 03</p>
+            <small>Any memory from friends or family fits here.</small>
+          </div>
+        </article>
+      </div>
+      <p class="note">Tip: keep your images in an <code>images/</code> folder next to this file. Update the URLs above and refresh.</p>
+    </section>
+
+    <section id="timeline" class="section timeline">
+      <div class="section-heading">
+        <p>Chapter IV</p>
+        <h2>Moments Dial</h2>
+        <span class="divider"></span>
+      </div>
+      <div class="timeline-shell">
+        <div class="timeline-track" role="tablist" aria-label="Moments">
+          <button class="tick" data-index="0" aria-selected="true">Signal</button>
+          <button class="tick" data-index="1">Momentum</button>
+          <button class="tick" data-index="2">Community</button>
+          <button class="tick" data-index="3">Tomorrow</button>
+        </div>
+        <div class="timeline-progress" aria-hidden="true"></div>
+        <div class="timeline-content" role="tabpanel">
+          <h3 id="timeline-title"></h3>
+          <p id="timeline-body"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="wishes" class="section wishes">
+      <div class="section-heading">
+        <p>Chapter V</p>
+        <h2>Wish Orbits</h2>
+        <span class="divider"></span>
+        <p class="subtitle">Looping duas and birthday prayers coded specially for tonight.</p>
+      </div>
+      <div class="wish-orb">
+        <p class="wish-label">Wish <span id="spell-index">01</span></p>
+        <p class="wish-text" id="wish-text"></p>
+      </div>
+    </section>
+
+    <section id="quotes" class="section quotes">
+      <div class="section-heading">
+        <p>Chapter VI</p>
+        <h2>Quote Stream</h2>
+        <span class="divider"></span>
+        <p class="subtitle">Simple lines inspired by rains, chai, and thoughtful people like you.</p>
+      </div>
+      <div class="quote-shell">
+        <blockquote>
+          <p id="quote-text"></p>
+          <cite id="quote-tag"></cite>
+        </blockquote>
+        <div class="quote-controls">
+          <button id="quote-prev" aria-label="Previous quote">&#8592;</button>
+          <button id="quote-next" aria-label="Next quote">&#8594;</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="cheer" class="section cheer">
+      <div class="section-heading">
+        <p>Chapter VII</p>
+        <h2>Cheer Beacon</h2>
+        <span class="divider"></span>
+        <p class="subtitle">Tap the button (or wait a few seconds) to stream gentle cheers straight to Zunaira.</p>
+      </div>
+      <div class="cheer-shell">
+        <div class="cheer-actions">
+          <p id="cheer-status">Tap the button to drop a fresh cheer.</p>
+          <button class="primary" id="cheer-button">Cheer for Zunaira</button>
+          <small>Bonus: cheers float in automatically every little while.</small>
+        </div>
+        <ul class="cheer-feed" id="cheer-feed" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <section id="aurora-drift" class="section aurora-drift">
+      <div class="section-heading">
+        <p>Chapter VIII</p>
+        <h2>Aurora Drift</h2>
+        <span class="divider"></span>
+        <p class="subtitle">Floating badges, animated ribbons, and a reminder that Zunaira deserves every sparkle.</p>
+      </div>
+      <div class="drift-grid">
+        <article class="drift-card">
+          <h3>Glow Ribbon</h3>
+          <p>Swipe left-right to see the gradient react. It's practicing for when you make your entrance.</p>
+        </article>
+        <article class="drift-card">
+          <h3>Soft Focus</h3>
+          <p>Every calm breath you take sends ripples through this canvas. Even code knows your influence.</p>
+        </article>
+        <article class="drift-card">
+          <h3>Orbit Track</h3>
+          <p>These badges loop your name in neon. Tap anywhere to spark an extra shimmer.</p>
+        </article>
+      </div>
+      <div class="ticker" aria-hidden="true">
+        <span>Zunaira shines · Jillani cheering · Midnight aurora · Brave ideas · Gentle confidence · </span>
+        <span>Zunaira shines · Jillani cheering · Midnight aurora · Brave ideas · Gentle confidence · </span>
+      </div>
+    </section>
+
+    <section id="playground" class="section playground">
+      <div class="section-heading">
+        <p>Chapter IX</p>
+        <h2>Playful Orbit</h2>
+        <span class="divider"></span>
+        <p class="subtitle">Catch the glowing dots before they fade to collect compliments.</p>
+      </div>
+      <div class="game-panel">
+        <div class="scoreboard">
+          <p>Compliments caught</p>
+          <strong id="score-count">00</strong>
+        </div>
+        <div class="game-actions">
+          <button id="game-toggle" class="primary">Start orbit game</button>
+          <small>Tip: play with audio on for soft chimes.</small>
+        </div>
+      </div>
+      <div class="game-board" id="game-board" aria-live="polite" aria-label="Compliment catcher playground"></div>
+      <ul class="game-feed" id="game-feed" aria-live="polite"></ul>
+    </section>
+
+    <section id="sequence" class="section sequence">
+      <div class="section-heading">
+        <p>Chapter X</p>
+        <h2>Sequence Lab</h2>
+        <span class="divider"></span>
+        <p class="subtitle">Watch the pads light up, then repeat the pattern. Each win adds to Zunaira's inspiration log.</p>
+      </div>
+      <div class="sequence-panel">
+        <div>
+          <p>Current level</p>
+          <strong id="sequence-level">00</strong>
+        </div>
+        <div>
+          <button id="sequence-toggle" class="secondary">Start sequence</button>
+          <small id="sequence-status">Tap start to begin.</small>
+        </div>
+      </div>
+      <div class="sequence-grid" role="group" aria-label="Memory pads">
+        <button class="sequence-pad" data-pad="0" aria-label="Pad one"></button>
+        <button class="sequence-pad" data-pad="1" aria-label="Pad two"></button>
+        <button class="sequence-pad" data-pad="2" aria-label="Pad three"></button>
+        <button class="sequence-pad" data-pad="3" aria-label="Pad four"></button>
+      </div>
+      <ul class="sequence-feed" id="sequence-feed" aria-live="polite"></ul>
+    </section>
+
+    <section id="future" class="section future">
+      <div class="section-heading">
+        <p>Chapter XI</p>
+        <h2>Inspiration Mixer</h2>
+        <span class="divider"></span>
+        <p class="subtitle">Slide to pick a birthday vibe for the months ahead.</p>
+      </div>
+      <div class="future-shell">
+        <input type="range" min="0" max="2" value="0" id="dream-slider" aria-label="Choose a vibe" />
+        <div class="future-output">
+          <h3 id="future-title"></h3>
+          <p id="future-body"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="countdown" class="section countdown">
+      <div class="section-heading">
+        <p>Final Chapter</p>
+        <h2>Midnight Reminder</h2>
+        <span class="divider"></span>
+      </div>
+      <div class="countdown-shell">
+        <div>
+          <p>Countdown to your surprise link</p>
+          <div class="digits" id="countdown-digits">00:00:00</div>
+          <small>Keep this tab open when the clock reaches midnight.</small>
+        </div>
+        <div class="letter">
+          <p>Dear Zunaira,</p>
+          <p>This digital postcard is from Jillani &mdash; someone cheering for you from a respectful distance. May your new year collect gentle mornings, brave ideas, and cities that treat you kindly.</p>
+          <p>If you ever need a dose of midnight encouragement, this page will still be orbiting.</p>
+          <p class="signature">Warm wishes,<br />Jillani</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Built with respect and creativity by Jillani for Zunaira.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
